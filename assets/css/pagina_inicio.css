@@ -1,0 +1,828 @@
+@import url(icons.css);
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'quicksand';
+}
+
+::selection{
+    background-color: #333;
+    color: #fff;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*fuente para toda la pagina*/
+
+@font-face {
+    font-family: 'quicksand';
+    src: url('../fonts/Quicksand/quicksand-regular-webfont.eot');
+    src: url('../fonts/Quicksand/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Quicksand/quicksand-regular-webfont.woff2') format('woff2'), url('../fonts/Quicksand/quicksand-regular-webfont.woff') format('woff'), url('../fonts/Quicksand/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*==============opciones del menu y de la ventana de inicio de sesion==============*/
+
+
+/*las animaciones para cuando se colapse el menú de navegación*/
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 10px 0;
+        -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+        transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+
+/*la posición que tiene la ventana modal para iniciar sesión*/
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 100px auto;
+    }
+}
+
+
+/*caja para el logo y el titulo de la ventana de inicio de sesión */
+
+.caja-inicio-sesion {
+    padding: 1em 22px;
+    text-align: center;
+    background: #ff9800 url(..//img/Huevo.png);
+}
+
+.incorrecto{
+    text-align: center;
+    font-weight: bold; 
+    padding-bottom: 12px;
+}
+
+.incorrecto-2{
+    color: red;
+}
+
+/*titulo de la ventana de inicio de sesión*/
+
+.caja-inicio-sesion-titulo {
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+
+/*tamaño del logo de la ventana*/
+
+.logo-inicio-sesion {
+    width: 6em;
+    margin-top: 1.3em;
+}
+
+
+/*estilos del botón de inicio de sesion*/
+
+
+/*caja para para ubicar el boton */
+
+.box {
+    padding-bottom: 6px;
+}
+
+
+/* Common button styles */
+
+.button {
+    /*float: left;*/
+    min-width: 150px;
+    max-width: 250px;
+    display: block;
+    margin: auto;
+    padding: 1em 2em;
+    border: none;
+    background: none;
+    color: inherit;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid;
+    border-radius: 2px;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button>span {
+    vertical-align: middle;
+}
+
+
+/* Antiman */
+
+.button--antiman {
+    background: none;
+    border: none;
+    height: 60px;
+}
+
+.button--antiman.button--inverted, .button--antiman.button--inverted-alt {
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--antiman>span {
+    padding-left: 0.35em;
+}
+
+.button--antiman::before, .button--antiman::after {
+    content: '';
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--antiman::before {
+    border: 2px solid #37474f;
+    opacity: 0;
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
+}
+
+.button--antiman.button--border-thin::before {
+    border-width: 1px;
+}
+
+.button--antiman.button--border-medium::before {
+    border-width: 2px;
+}
+
+.button--antiman.button--border-thick::before {
+    border-width: 3px;
+}
+
+.button--antiman.button--inverted::before {
+    border-color: #7986cb;
+}
+
+.button--antiman.button--inverted-alt::before {
+    border-color: #ff9800;
+}
+
+.button--antiman::after {
+    background: #fff;
+}
+
+.button--antiman.button--inverted::after {
+    background: #7986cb;
+}
+
+.button--antiman.button--inverted-alt::after {
+    background: #ff9800;
+}
+
+.button--antiman.button--inverted:hover {
+    color: #ff9800;
+}
+
+.button--antiman.button--inverted-alt:hover {
+    color: #ff9800;
+}
+
+.button--antiman:hover::before {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+.button--antiman:hover::after {
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 1);
+    transform: scale3d(0.8, 0.8, 1);
+}
+
+
+/*fin de los estilos del boton de inicio de sesion*/
+
+
+/*para que le banner sea responsing desing*/
+
+@media screen and (max-width: 54em) {
+    .caja_banner {
+        display: block;
+        font-size: 60%;
+        padding-top: 40%;
+        padding-bottom: 50%;
+    }
+
+    .parrafo_quees{
+        font-size: 1em;
+    }
+}
+
+
+/*el color del texto del menu antes de scrolear*/
+
+.navbar {
+    color: #fff;
+}
+
+.li {
+    cursor: pointer;
+}
+
+
+/*para los bordes de cada opcion*/
+
+.navbar-default .navbar-nav>li>a {
+    font-weight: bold;
+    /*text-align:center;*/
+    color: #fff;
+    border-bottom: 3px solid transparent;
+}
+
+
+/*para cuando se pase el cursor cambie el borde de color  de cada opción */
+
+.navbar-default .navbar-nav>li>a:hover {
+    /*background-color: #e7e7e7;*/
+    background-color: rgba(107, 102, 102, 0.08);
+    border-bottom: 3px solid #ff9800;
+}
+
+
+/*cuando se ha dado clic el borde cambie de color*/
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: rgba(107, 102, 102, 0.08);
+    border-bottom: 3px solid #ff9800;
+}
+
+
+/*los estilos para cada una de las opciones del menu*/
+
+.menu_icons {
+    vertical-align: text-bottom;
+    line-height: 1.3;
+}
+
+
+/*==================Fin de los estilos del menu y de la ventana de inicio de sesion==================*/
+
+
+/*=======================estilos de cada una de las cajas=======================*/
+
+
+/*titulo de cada caja de la pagina*/
+
+.titulo_section {
+    font-weight: bold;
+    margin-bottom: 2.6em;
+    text-align: center;
+}
+
+
+/*para que cada titulo tenga su borde en la parate baja*/
+
+.titulo_section:after {
+    content: "";
+    display: block;
+    position: relative;
+    left: 50%;
+    bottom: 0;
+    width: 5em;
+    height: 2px;
+    background: #ff9800;
+    margin-top: 6px;
+    -webkit-transform: translate(-50%, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.titulo_section2 {
+    font-weight: bold;
+    margin-top: 2.6em;
+    text-align: center;
+}
+
+
+/*para que cada titulo tenga su borde en la parate baja*/
+
+.titulo_section2:after {
+    content: "";
+    display: block;
+    position: relative;
+    left: 50%;
+    bottom: 0;
+    width: 5em;
+    height: 2px;
+    background: #ff9800;
+    margin-top: 6px;
+    -webkit-transform: translate(-50%, 0);
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate(-50%, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+
+/*Estilos del contenido del banner */
+
+.intro-section {
+    height: 100%;
+    padding-top: 65px;
+    text-align: center;
+    background: url(..//img/Fondo_Banner.png );
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.desarrolladores-section {
+    height: 100%;
+    padding-top: 8%;
+    text-align: center;
+    /*background: #eee;*/
+    background: url(..//img/Fondo_Banner.png );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -190px;
+}
+
+.sub_desarolladores{
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+
+.logo_banner {
+    width: 30%;
+    margin-top: 24px;
+}
+
+.titulo_banner {
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: 7em;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.subtitulo_banner {
+    color: #fff;
+    font-size: 2.3em;
+    margin-top: 0;
+}
+
+
+/*Fin de los estilos del contenido del banner */
+
+
+/*estilos del que es */
+
+.about-section {
+    height: 85%;
+    padding-top: 8%;
+    text-align: center;
+    /*background: #eee;*/
+}
+
+.parrafo_quees {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+    line-height: 1.2em;
+}
+
+
+/*Fin de los estilos del que es */
+
+
+/* estilos del Contenido de de servicios */
+
+.services-section {
+    height: 100%;
+    padding-top: 8%;
+    padding-bottom: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.servicios_icon {
+    font-size: 8em;
+}
+
+.subtitulo_servicios {
+    color: #ff9800;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.parrafo_servicios {
+    font-size: 1.1em;
+    justify-content: center;
+}
+
+
+/* fin de los estilos del Contenido de de servicios */
+
+.contact-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #eee;
+}
+
+
+/* Estilos del footer*/
+
+.footer_ul {
+    margin: 0 0 0em 0;
+}
+
+footer> :last-child {
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+
+footer {
+    font-size: 14pt;
+    padding-top: 3em;
+}
+
+
+/* modificacion de los iconos con movimiento  */
+
+.icons {
+    text-decoration: none;
+    position: relative;
+}
+
+.icons:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icons.circle-footer {
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    icons transition: all 0.2s ease-in-out;
+    border: 0;
+    border-radius: 100%;
+    display: inline-block;
+    font-size: 1.1em;
+    height: 2.25em;
+    left: 0;
+    line-height: 2.25em;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 2.25em;
+}
+
+
+/* añadirle estilos a los iconos con movimiento  */
+
+.icons.circle-footer:hover {
+    top: -0.2em;
+}
+
+
+/*colores de los iconos del footer*/
+
+.icons.circle-footer.icon-blogger {
+    background: #ff5722;
+    color: #fff;
+}
+
+.icons.circle-footer.icon-blogger:hover {
+    background: #f76f44;
+}
+
+.icons.circle-footer.icon-google-plus {
+    background: #f44336;
+    color: #fff;
+}
+
+.icons.circle-footer.icon-google-plus:hover {
+    background: #e57373;
+}
+
+.icons>.label {
+    display: none;
+}
+
+.footer_ul.icons .footer_li {
+    display: inline-block;
+}
+
+
+/* los estilos del copyright */
+
+.footer {
+    margin-top: 27px;
+    background: #eee;
+    padding: 1em;
+    text-align: center;
+}
+
+.footer .copyright {
+    font-size: 0.8em;
+    line-height: 1em;
+    color: #333;
+}
+
+.footer .copyright .copyright_a {
+    color: #ffc900;
+    text-decoration: none;
+}
+
+.footer .copyright .copyright_li {
+    display: inline-block;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: dotted 1px;
+}
+
+.footer .copyright .copyright_li:first-child {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.caja_redes {
+    padding: 65px 0;
+}
+
+
+/* estilos para los iconos que se elevan*/
+
+.icons.circle:hover {
+    top: -0.2em;
+}
+
+.icons.circle {
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    icons transition: all 0.2s ease-in-out;
+    border: 0;
+    border-radius: 100%;
+    display: inline-block;
+    font-size: 1.25em;
+    height: 2.25em;
+    left: 0;
+    line-height: 2.25em;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    width: 2.25em;
+    text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.icons.circle.icon-twitter {
+    background: #03a9f4;
+    color: #fff;
+}
+
+.icons.circle.icon-twitter:hover {
+    background: #42a5f5;
+}
+
+.icons.circle.icon-facebook {
+    background: #1565c0;
+    color: #fff;
+}
+
+.icons.circle.icon-facebook:hover {
+    background: #2196f3;
+}
+
+.icons.circle.icon-instagram2 {
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -webkit-linear-gradient(top left, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -o-linear-gradient(top left, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(to bottom right, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    color: #fff;
+}
+
+.icons.circle.icon-instagram2:hover {
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -webkit-linear-gradient(top left, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -o-linear-gradient(top left, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(to bottom right, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+}
+
+.icons.circle.icon-google-plus {
+    background: #f44336;
+    color: #fff;
+}
+
+.icons.circle.icon-google-plus:hover {
+    background: #e57373;
+}
+
+.icons.circle.icon-github {
+    background: #dcad8b;
+    color: #fff;
+}
+
+.icons.circle.icon-github:hover {
+    background: #e1b89b;
+}
+
+.icons.circle.icon-dribbble {
+    background: #da83ae;
+    color: #fff;
+}
+
+.icons.circle.icon-dribbble:hover {
+    background: #df93b8;
+}
+
+.icons.circle.icon-blogger {
+    background: #ff5722;
+    color: #fff;
+}
+
+.icons.circle.icon-blogger:hover {
+    background: #f76f44;
+}
+
+
+/*=======================Fin de los estilos de cada una de las cajas=======================*/
+
+
+/*============================estilos para el botón de ir arriba============================*/
+
+.ir-arriba {
+    display: none;
+    padding: 18px 21px;
+    background: #ff9800;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    vertical-align: middle;
+    border-radius: 30px;
+    z-index: 5;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/*============================estilos para el botón de ir arriba============================*/
+
+@media only screen and (min-width: 1824px) {
+    .caja_banner {
+        padding-top: 12em;
+    }
+    .modal-dialog {
+        width: 600px;
+        margin: 20em auto;
+    }
+}
+
+.sup {
+    margin-left: 1em;
+    font-size: 0.8em;
+    color: #FF9800;
+}
+
+.recomendacion {
+    color: #ff9800;
+    margin-left: 10px;
+    display: none;
+}
+
+
+/*estilos de la pagina Pagina desarrolladores*/
+
+.Foto_Desarrollador {
+    width: 17em;
+    height: 17em;
+    border-radius: 50%;
+    box-shadow: 4px 5px 10px 4px rgba(0, 0, 0, 0.35);
+    /*box-shadow:  1px 1px 17px 4px rgba(0, 0, 0, 0.35);*/
+}
+
+.Foto_Grupo {
+    width: 85%;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.caja_Foto_Grupo {
+    text-align: center;
+}
+
+
+/*.Foto_Desarrollador:hover{*/
+
+
+/*box-shadow: 4px 5px 10px 4px rgba(0, 0, 0, 0.35);*/
+
+
+/* box-shadow: 1px 1px 17px 9px rgba(0, 0, 0, 0.35);
+     -moz-transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.82, 0.63);
+    -ms-transition: all 0.2s ease-in-out;
+}*/
+
+.Nombre_Desarrollador {
+    font-weight: bold;
+}
+
+.Descripcion_Desarrollador {
+    font-size: 16px;
+}
+
+.Rango {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 54em) {
+    .Caja_Foto_Desarrollador {
+        text-align: center;
+        padding-bottom: 2em;
+    }
+    .Nombre_Desarrollador {
+        font-size: 1.9em;
+        text-align: center;
+    }
+    .tab-slider--trigger {
+        text-align: center
+    }
+    .Nav_Informacion {
+        padding-left: 2.3em;
+    }
+}
+
+.Sub_Desarrollador {
+    color: #ff9800;
+    font-size: 24px;
+    line-height: 1.25;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    cursor: default;
+    font-weight: bold;
+}
+.nav-tabs>li>a {
+    background-color: transparent !important;
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border-bottom: 2px solid transparent;
+    color: #555;
+    border-radius: 0;
+    transition: all 0.15s ease-in-out;
+    font-weight: bold;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}*/
+
+.Separador_desarrolladores {
+    margin-bottom: 30px;
+}

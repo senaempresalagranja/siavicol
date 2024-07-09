@@ -1,0 +1,27 @@
+||||||||||||||||||||||||||
+Administrador        ||
+usuario:                     ||
+admin                        ||
+	                 ||
+Contraseña:              ||
+sena123                      ||
+|||||||||||||||||||||||||||
+
+||||||||||||||||||||||||||
+Usuario consulta  ||
+usuario:                    ||
+consu                        ||
+	                ||
+contraseña:             ||
+123	                ||
+||||||||||||||||||||||||||
+
+||||||||||||||||||||||||||
+Usuario Registro   ||
+usuario:                    ||
+registro                     ||
+	                ||
+contraseña:             ||
+123                              ||
+||||||||||||||||||||||||||
+

@@ -1,0 +1,25 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+    cursor: default;
+    font-weight: bold;
+}
+.nav-tabs>li>a {
+    background-color: transparent !important;
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border-bottom: 2px solid transparent;
+    color: #555;
+    border-radius: 0;
+    transition: all 0.15s ease-in-out;
+    font-weight: bold;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.Separador_desarrolladores{
+    margin-bottom: 30px;
+}
